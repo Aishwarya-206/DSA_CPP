@@ -2,22 +2,24 @@
 #include<climits>
 using namespace std;
 int findmin(int arr[], int n){
-    int min = INT_MAX;
+    int minval = INT_MAX;
     for(int i=0; i<n; i++){
-        if(arr[i]<min){
-            min = arr[i];
-        }
+        // if(arr[i]<minval){
+        //     minval = arr[i];
+        // }
+        minval = min(minval, arr[i]);
     }
-    return min;
+    return minval;
 }
 int findmax(int arr[], int n){
-    int max = INT_MIN;
+    int maxval = INT_MIN;
      for(int i=0; i<n; i++){
-        if(arr[i]>max){
-            max = arr[i];
-        }
+        // if(arr[i]>maxval){
+        //     maxval = arr[i];
+        // }
+        maxval = max(maxval, arr[i]);
     }
-    return max;
+    return maxval;
 }
 int main(){
     int n;
@@ -27,9 +29,9 @@ int main(){
     for(int i=0; i<n; i++){
         cin>>arr[i];
     }
-    int min = findmax(arr,n);
-    int max = findmin(arr,n);
-    cout<<"the min value is: "<<min<<endl<<"the max value is: "<<max<<endl; 
+    int minval = findmin(arr,n);
+    int maxval = findmax(arr,n);
+    cout<<"the min value is: "<<minval<<endl<<"the max value is: "<<maxval<<endl; 
     
     return 0;
 }
